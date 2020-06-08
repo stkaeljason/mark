@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qiuqi.mark.dao.TaskMapper" >
+    <resultMap id="BaseResultMap" type="com.qiuqi.mark.model.Task" >
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="task_id" property="taskId" jdbcType="BIGINT" />
+        <result column="data_id" property="dataId" jdbcType="BIGINT" />
+        <result column="task_category" property="taskCategory" jdbcType="TINYINT" />
+        <result column="task_category_value" property="taskCategoryValue" jdbcType="VARCHAR" />
+        <result column="task_status" property="taskStatus" jdbcType="TINYINT" />
+        <result column="creator" property="creator" jdbcType="VARCHAR" />
+        <result column="create_id" property="createId" jdbcType="BIGINT" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="enable" property="enable" jdbcType="TINYINT" />
+    </resultMap>
+
+    <resultMap id="TaskVo" type="com.qiuqi.mark.vo.task.TaskVo" >
+        <result column="data_name" property="dataName" jdbcType="VARCHAR" />
+        <result column="data_category" property="dataCategory" jdbcType="TINYINT" />
+        <result column="task_category" property="taskCategory" jdbcType="TINYINT" />
+        <result column="task_category_value" property="taskCategoryValue" jdbcType="VARCHAR" />
+        <result column="task_status" property="taskStatus" jdbcType="TINYINT" />
+        <result column="task_schdule" property="taskSchdule" jdbcType="VARCHAR" />
+        <result column="data_amount" property="dataAmount" jdbcType="BIGINT" />
+        <result column="creator" property="creator" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+<!--    <select id="countRole" parameterType="com.ceiec.witpark.vo.system.RoleQueryVo" resultType="Long">-->
+<!--        select count(role_id) from sys_role where enable = 1 and role_id != 1-->
+<!--        <if test=" roleName != null and roleName != '' ">-->
+<!--            and role_name like concat('%', #{roleName}, '%')-->
+<!--        </if>-->
+<!--    </select>-->
+
+    <select id="queryTask"  parameterType="com.qiuqi.mark.vo.task.TaskQueryVo" resultMap="TaskVo">
+        select d.data_name,d.data_category,d.data_amount,t.task_category,t.task_category_value,t.task_status, t.task_schdule,t.creator,t.create_time
+        from task t  left join data d on t.data_id = d.data_id where t.enable = 1
+        <if test="userRoleId != 1">
+            and role_id != 1
+        </if>
+        <if test="roleQueryVo.roleName != null and roleQueryVo.roleName != '' ">
+            and role_name like concat('%', #{roleQueryVo.roleName}, '%')
+        </if>
+    </select>
+</mapper>
