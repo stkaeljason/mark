@@ -12,7 +12,7 @@ public class Client {
         context.uploadInstallPack("sldflsf");
         context.install();
         context.startProduct();
-        context.restartProduct();
+//        context.restartProduct();
 
     }
 }
