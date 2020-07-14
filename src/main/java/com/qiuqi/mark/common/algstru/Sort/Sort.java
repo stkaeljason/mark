@@ -8,5 +8,4 @@ package com.qiuqi.mark.common.algstru.Sort;
 public interface Sort {
 
     int [] sort();
-    void showCollection();
 }

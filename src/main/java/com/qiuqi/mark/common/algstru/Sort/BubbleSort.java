@@ -5,15 +5,10 @@ package com.qiuqi.mark.common.algstru.Sort;
  * @version 1.0
  * @date 7/9/20 11:14 AM
  */
-public class BubbleSort implements Sort{
-
-    private int[] arr;
-
-    private int len;
+public class BubbleSort extends AbstractSort implements Sort{
 
     public BubbleSort(int[] a){
-        arr = a;
-        len = a.length;
+        super(a);
     }
 
     @Override
@@ -35,12 +30,5 @@ public class BubbleSort implements Sort{
             }
         }
         return arr;
-    }
-
-    @Override
-    public void showCollection() {
-        for(int i=0;i<len;i++){
-            System.out.print(arr[i]);
-        }
     }
 }

@@ -5,14 +5,10 @@ package com.qiuqi.mark.common.algstru.Sort;
  * @version 1.0
  * @date 7/7/20 5:31 PM
  */
-public class SelectSort implements Sort{
-
-    private int [] arr;
-    private int len;
+public class SelectSort extends AbstractSort implements Sort{
 
     public SelectSort(int[] a){
-        arr = a;
-        len = a.length;
+        super(a);
     }
 
     @Override
@@ -31,12 +27,5 @@ public class SelectSort implements Sort{
             arr[i] = min;
         }
         return arr;
-    }
-
-    @Override
-    public void showCollection() {
-        for(int i=0;i<len;i++){
-            System.out.print(arr[i]);
-        }
     }
 }

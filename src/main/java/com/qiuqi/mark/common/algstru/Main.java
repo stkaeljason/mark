@@ -1,8 +1,6 @@
 package com.qiuqi.mark.common.algstru;
 
-import com.qiuqi.mark.common.algstru.Sort.BubbleSort;
-import com.qiuqi.mark.common.algstru.Sort.SelectSort;
-import com.qiuqi.mark.common.algstru.Sort.Sort;
+import com.qiuqi.mark.common.algstru.Sort.*;
 
 /**
  * @author jiaqiying
@@ -12,8 +10,8 @@ import com.qiuqi.mark.common.algstru.Sort.Sort;
 public class Main {
 
     public static void main(String[] args){
-        int[] a = new int[]{3,1,0,8};
-        Sort sort = new SelectSort(a);
+        int[] a = new int[]{3,1,0,8, -1,9};
+        InsertSort sort = new InsertSort(a);
         sort.sort();
         sort.showCollection();
     }
