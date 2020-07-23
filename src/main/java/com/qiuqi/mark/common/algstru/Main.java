@@ -1,6 +1,7 @@
 package com.qiuqi.mark.common.algstru;
 
 import com.qiuqi.mark.common.algstru.Sort.*;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 /**
  * @author jiaqiying
@@ -10,8 +11,8 @@ import com.qiuqi.mark.common.algstru.Sort.*;
 public class Main {
 
     public static void main(String[] args){
-        int[] a = new int[]{3,1,0,8, -1,9};
-        InsertSort sort = new InsertSort(a);
+        int[] a = new int[]{3,1,0,-1,9,8,2,7,10,100,-2,8,9,22};
+        MergeSort sort = new MergeSort(a);
         sort.sort();
         sort.showCollection();
     }

@@ -24,6 +24,10 @@ public class AbstractSort {
             arrlist.append(arr[i]);
 
         }
-        System.out.print(arrlist.toString());
+        System.out.print(arrlist.toString()+"\n");
+    }
+
+    public void setArr(int[] arr) {
+        this.arr = arr;
     }
 }

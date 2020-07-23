@@ -28,6 +28,7 @@ public class BubbleSort extends AbstractSort implements Sort{
             }else {
                 flag = true;
             }
+            showCollection();
         }
         return arr;
     }
