@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args){
         int[] a = new int[]{3,1,0,-1,9,8,2,7,10,100,-2,8,9,22};
-        MergeSort sort = new MergeSort(a);
+        HeapSort sort = new HeapSort(a);
         sort.sort();
         sort.showCollection();
     }

@@ -27,6 +27,12 @@ public class AbstractSort {
         System.out.print(arrlist.toString()+"\n");
     }
 
+    public void swap(int i,int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
     public void setArr(int[] arr) {
         this.arr = arr;
     }

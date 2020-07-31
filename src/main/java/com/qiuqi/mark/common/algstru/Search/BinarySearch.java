@@ -20,22 +20,6 @@ public class BinarySearch {
 
     }
 
-    public static void search(int[] array, int left, int right, int value){
-        int mid = (left+right)/2;
-       if(left>right){
-           return;
-       }else if(left==right && array[mid] != value){
-           return;
-       }
-        if(array[mid] == value){
-            System.out.println(mid);
-            return;
-        }
-        search(array, left,mid,value);
-        search(array,mid+1, right,value);
-
-    }
-
     public static int searchForSort(int[] array, int left, int right, int value){
         //必须是有序序列
         int mid = (left+right)/2;
